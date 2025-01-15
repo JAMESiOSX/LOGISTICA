@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    z-index: 1000;
+    border-bottom: 2px solid #555;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    max-width: 150px; /* Evita que sobresalga */
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.logo p {
+    margin: 0;
+    font-size: 14px;
+    font-style: italic;
+    color: #ccc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px; /* Espacio entre enlaces */
+    flex-wrap: wrap; /* Permite que los enlaces bajen si hay poco espacio */
+}
+
+.navbar li {
+    margin: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #00d4ff;
+}
+
+main {
+    padding-top: 70px; /* Compensa el espacio del navbar fijo */
+}
+
+section {
+    padding: 100px 20px;
+    margin-top: 60px;
+    border-bottom: 1px solid #ddd;
+    max-width: 1200px; /* Limita el ancho de las secciones */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section:last-child {
+    border-bottom: none;
+}

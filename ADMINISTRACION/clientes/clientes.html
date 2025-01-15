@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Clientes</title>
+    <link rel="stylesheet" href="clientes.css">
+    <link rel="icon" href="../login/administrador.png" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- Material Icons -->
+    <script src="clientes.js" defer></script>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <div class="logo">
+            <h1>GARZAM</h1>
+            <p>Gestión de Clientes</p>
+        </div>
+        <ul>
+            <li><a href="../inicio/inicio.html">Inicio</a></li>
+            <li><a href="../camiones/camiones.html">Camiones</a></li>
+            <li><a href="../choferes/choferes.html">Choferes</a></li>
+            <li><a href="../rutas/rutas.html">Rutas</a></li>
+            <li><a href="clientes.html">Clientes</a></li>
+            <li><a href="../cotizaciones/cotizaciones.html">Cotizaciones rápidas</a></li>
+            <li><a href="../contratos/contratos.html">Contratos</a></li>
+            <li><a href="http://localhost/LOGISTICA%20Y%20COTIZACIONES/CLIENTES/index.html"><i class="material-icons">logout</i> Cerrar Sesión</a></li>
+        </ul>
+    </div>
+
+    <!-- Contenido principal -->
+    <main>
+        <section class="tabla-section">
+            <h2>Gestión de Clientes</h2>
+            <p>Buscar por nombre o apellidos del cliente:</p>
+            <input type="text" id="nombre_cliente" placeholder="Nombre o apellidos">
+            <button id="btnConsultar">Consultar</button>
+            <button id="btnAgregarNuevo">Agregar Nuevo Cliente</button>
+
+            <!-- Tabla para mostrar los resultados -->
+            <table id="tabla-clientes">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Correo</th>
+                        <th>RFC</th>
+                        <th>CURP</th>
+                        <th>Teléfono</th>
+                        <th>Dirección</th>
+                        <th>Nombre Empresa</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="clientesBody">
+                    <!-- Aquí se llenarán los datos -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Contenedor para los modales -->
+        <section class="modal-section">
+            <!-- Ventana flotante para Agregar Nuevo Cliente -->
+            <div id="modalAgregar" class="modal">
+                <div class="modal-content">
+                    <h3>Agregar Nuevo Cliente</h3>
+                    <form id="formAgregarCliente">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                        <label for="apellidos">Apellidos</label>
+                        <input type="text" id="apellidos" name="apellidos" required>
+                        <label for="correo">Correo</label>
+                        <input type="email" id="correo" name="correo" required>
+                        <label for="rfc">RFC</label>
+                        <input type="text" id="rfc" name="rfc" required>
+                        <label for="curp">CURP</label>
+                        <input type="text" id="curp" name="curp" required>
+                        <label for="telefono">Teléfono</label>
+                        <input type="text" id="telefono" name="telefono" required>
+                        <label for="direccion">Dirección</label>
+                        <input type="text" id="direccion" name="direccion" required>
+                        <label for="nombre_empresa">Nombre Empresa</label>
+                        <input type="text" id="nombre_empresa" name="nombre_empresa" required>
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" required>
+                        <button type="submit">Agregar</button>
+                        <button type="button" id="cerrarModal">Cerrar</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Ventana flotante para Actualizar Cliente -->
+            <div id="modalActualizar" class="modal">
+                <div class="modal-content">
+                    <h3>Actualizar Cliente</h3>
+                    <form id="formActualizarCliente">
+                        <input type="hidden" id="cliente_id_upd" name="id">
+                        <label for="nombre_upd">Nombre</label>
+                        <input type="text" id="nombre_upd" name="nombre" required>
+                        <label for="apellidos_upd">Apellidos</label>
+                        <input type="text" id="apellidos_upd" name="apellidos" required>
+                        <label for="correo_upd">Correo</label>
+                        <input type="email" id="correo_upd" name="correo" required>
+                        <label for="rfc_upd">RFC</label>
+                        <input type="text" id="rfc_upd" name="rfc" required>
+                        <label for="curp_upd">CURP</label>
+                        <input type="text" id="curp_upd" name="curp" required>
+                        <label for="telefono_upd">Teléfono</label>
+                        <input type="text" id="telefono_upd" name="telefono" required>
+                        <label for="direccion_upd">Dirección</label>
+                        <input type="text" id="direccion_upd" name="direccion" required>
+                        <label for="nombre_empresa_upd">Nombre Empresa</label>
+                        <input type="text" id="nombre_empresa_upd" name="nombre_empresa" required>
+                        <label for="password_upd">Contraseña (si desea cambiarla)</label>
+                        <input type="password" id="password_upd" name="password">
+                        <button type="submit">Actualizar</button>
+                        <button type="button" id="cerrarModalUpd">Cerrar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

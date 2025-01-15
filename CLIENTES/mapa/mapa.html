@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Cotización por Mapa - Transportes GARZAM</title>
+    <link rel="stylesheet" href="../panelcliente/panelcliente.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="mapa.css">
+    <link rel="icon" href="../iconos/pestaña.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="../iconos/logo.png" alt="Logo de Transportes GARZAM" class="logo-img">
+            <div class="title-container">
+                <h1 class="logo">GARZAM</h1>
+                <p class="subtitle">Logística y Transporte</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../panelcliente/panelcliente.html">Panel de Cliente</a></li>
+                    <li><a href="../logout.php" id="logoutBtn"><i class="fas fa-sign-out-alt nav-icon"></i> Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="nueva-cotizacion-mapa">
+        <div id="inputs-column">
+            <h2>Nueva Cotización por Mapa</h2>
+            <br>
+            <label for="start">Punto de Salida:</label>
+            <input type="text" id="start" name="start">
+            <label for="end">Destino:</label>
+            <input type="text" id="end" name="end">
+            <button type="button" onclick="calculateRoute()">Calcular Ruta</button> <!-- Botón "Calcular Ruta" -->
+            <label for="camiones">Seleccione el camión:</label>
+            <select id="camiones" required></select>
+            <label for="tipo_material">Seleccione el tipo de material:</label>
+            <select id="tipo_material" required></select>
+            <label for="peso">Ingrese el peso (en kilogramos):</label>
+            <input type="number" id="peso" required>
+            <label for="fechaSalida">Fecha de salida:</label>
+            <input type="datetime-local" id="fechaSalida" required>
+            <label for="fechaEntrega">Fecha de entrega:</label>
+            <input type="datetime-local" id="fechaEntrega" required>
+        </div>
+        <div id="map"></div>
+        <div id="output"></div>
+        <div id="selected-route-details"></div>
+        <div id="costoTotal"></div> <!-- Contenedor para mostrar el costo total -->
+        <button type="button" id="calcularCostoBtn">Calcular Costo</button> <!-- Botón flotante -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Transportes GARZAM. Todos los derechos reservados.</p>
+        <div class="social-icons">
+            <a href="#"><img src="../iconos/tiktok.png" alt="TikTok"></a>
+            <a href="#"><img src="../iconos/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="../iconos/x.png" alt="X"></a>
+            <a href="#"><img src="../iconos/instagram.png" alt="Instagram"></a>
+        </div>
+    </footer>
+
+    <script src="mapa.js"></script>
+    <script src="mapa-datos.js"></script>
+    <script src="calcularCosto.js"></script> <!-- Enlazamos el nuevo archivo -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTkG8LoFhhx3RnSHg04j22GgL2-sYNwq0&libraries=places&callback=initMap"></script>
+</body>
+</html>

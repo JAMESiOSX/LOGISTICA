@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Rutas</title>
+    <link rel="stylesheet" href="rutas.css">
+    <link rel="icon" href="../login/administrador.png" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- Material Icons -->
+    <script src="rutas.js" defer></script>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <div class="logo">
+            <h1>GARZAM</h1>
+            <p>Gestión de Rutas</p>
+        </div>
+        <ul>
+            <li><a href="../inicio/inicio.html">Inicio</a></li>
+            <li><a href="../camiones/camiones.html">Camiones</a></li>
+            <li><a href="../choferes/choferes.html">Choferes</a></li>
+            <li><a href="rutas.html">Rutas</a></li>
+            <li><a href="../clientes/clientes.html">Clientes</a></li>
+            <li><a href="../cotizaciones/cotizaciones.html">Cotizaciones rápidas</a></li>
+            <li><a href="../contratos/contratos.html">Contratos</a></li>
+            <li><a href="http://localhost/LOGISTICA%20Y%20COTIZACIONES/CLIENTES/index.html"><i class="material-icons">logout</i> Cerrar Sesión</a></li>
+        </ul>
+    </div>
+
+    <!-- Contenido principal -->
+    <main>
+        <section class="tabla-section">
+            <h2>Gestión de Rutas</h2>
+            <p>Buscar por origen o destino de la ruta:</p>
+            <input type="text" id="nombre_ruta" placeholder="Origen o destino">
+            <button id="btnConsultar">Consultar</button>
+            <button id="btnAgregarNuevo">Agregar Nueva Ruta</button>
+
+            <!-- Tabla para mostrar los resultados -->
+            <table id="tabla-rutas">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Origen</th>
+                        <th>Destino</th>
+                        <th>Distancia</th>
+                        <th>Número de Casetas</th>
+                        <th>Nombre de Casetas</th>
+                        <th>Costo de Casetas</th>
+                        <th>Tiempo Aproximado</th>
+                        <th>Fecha de la Ruta</th>
+                        <th>Total de Casetas</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="rutasBody">
+                    <!-- Aquí se llenarán los datos -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Contenedor para los modales -->
+        <section class="modal-section">
+            <!-- Ventana flotante para Agregar Nueva Ruta -->
+            <div id="modalAgregar" class="modal">
+                <div class="modal-content">
+                    <h3>Agregar Nueva Ruta</h3>
+                    <form id="formAgregarRuta">
+                        <label for="origen">Origen</label>
+                        <input type="text" id="origen" name="origen" required>
+                        <label for="destino">Destino</label>
+                        <input type="text" id="destino" name="destino" required>
+                        <label for="distancia">Distancia</label>
+                        <input type="text" id="distancia" name="distancia" required>
+                        <label for="numero_casetas">Número de Casetas</label>
+                        <select id="numero_casetas" name="numero_casetas" required>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <!-- Agregar más opciones según sea necesario -->
+                        </select>
+                        <div id="casetasContainer">
+                            <!-- Aquí se agregarán dinámicamente los campos de casetas -->
+                        </div>
+                        <label for="tiempo_aproximado">Tiempo Aproximado</label>
+                        <input type="text" id="tiempo_aproximado" name="tiempo_aproximado" required>
+                        <label for="fecha_ruta">Fecha de la Ruta</label>
+                        <input type="date" id="fecha_ruta" name="fecha_ruta" required>
+                        <button type="submit">Agregar</button>
+                        <button type="button" id="cerrarModal">Cerrar</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Ventana flotante para Actualizar Ruta -->
+            <div id="modalActualizar" class="modal">
+                <div class="modal-content">
+                    <h3>Actualizar Ruta</h3>
+                    <form id="formActualizarRuta">
+                        <input type="hidden" id="ruta_id_upd" name="id">
+                        <label for="origen_upd">Origen</label>
+                        <input type="text" id="origen_upd" name="origen" required>
+                        <label for="destino_upd">Destino</label>
+                        <input type="text" id="destino_upd" name="destino" required>
+                        <label for="distancia_upd">Distancia</label>
+                        <input type="text" id="distancia_upd" name="distancia" required>
+                        <label for="numero_casetas_upd">Número de Casetas</label>
+                        <select id="numero_casetas_upd" name="numero_casetas" required>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <!-- Agregar más opciones según sea necesario -->
+                        </select>
+                        <div id="casetasContainerUpd">
+                            <!-- Aquí se agregarán dinámicamente los campos de casetas -->
+                        </div>
+                        <label for="tiempo_aproximado_upd">Tiempo Aproximado</label>
+                        <input type="text" id="tiempo_aproximado_upd" name="tiempo_aproximado" required>
+                        <label for="fecha_ruta_upd">Fecha de la Ruta</label>
+                        <input type="date" id="fecha_ruta_upd" name="fecha_ruta" required>
+                        <button type="submit">Actualizar</button>
+                        <button type="button" id="cerrarModalUpd">Cerrar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

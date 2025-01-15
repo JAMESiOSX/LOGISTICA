@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Camiones</title>
+    <link rel="stylesheet" href="camiones.css">
+    <link rel="icon" href="../login/administrador.png" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- Material Icons -->
+    <script src="camion.js" defer></script>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <div class="logo">
+            <h1>GARZAM</h1>
+            <p>Gestión de Transporte</p>
+        </div>
+        <ul>
+            <li><a href="../inicio/inicio.html">Inicio</a></li>
+            <li><a href="camiones.html">Camiones</a></li>
+            <li><a href="../choferes/choferes.html">Choferes</a></li>
+            <li><a href="../rutas/rutas.html">Rutas</a></li>
+            <li><a href="../clientes/clientes.html">Clientes</a></li>
+            <li><a href="../cotizaciones/cotizaciones.html">Cotizaciones rápidas</a></li>
+            <li><a href="../contratos/contratos.html">Contratos</a></li>
+            <li><a href="http://localhost/LOGISTICA%20Y%20COTIZACIONES/CLIENTES/index.html"><i class="material-icons">logout</i> Cerrar Sesión</a></li>
+        </ul>
+    </div>
+
+    <!-- Contenido principal -->
+    <main>
+        <section class="tabla-section">
+            <h2>Gestión de Camiones</h2>
+            <p>Buscar por nombre de camión:</p>
+            <input type="text" id="nombre_camion" placeholder="Nombre del camión">
+            <button id="btnConsultar">Consultar</button>
+            <button id="btnAgregarNuevo">Agregar Nuevo Camión</button>
+
+            <!-- Tabla para mostrar los resultados -->
+            <table id="tabla-camiones">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tipo de Transporte</th>
+                        <th>Tipo de Vehículo</th>
+                        <th>Placas</th>
+                        <th>Economico</th>
+                        <th>Modelo</th>
+                        <th>Configuración</th>
+                        <th>Permiso SCT</th>
+                        <th>Num. Permiso</th>
+                        <th>Aseguradora</th>
+                        <th>Número de Póliza</th>
+                        <th>Rendimiento</th>
+                        <th>Capacidad de Carga</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="camionesBody">
+                    <!-- Aquí se llenarán los datos -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Contenedor para los modales -->
+        <section class="modal-section">
+            <!-- Ventana flotante para Agregar Nuevo Camión -->
+            <div id="modalAgregar" class="modal">
+                <div class="modal-content">
+                    <h3>Agregar Nuevo Camión</h3>
+                    <form id="formAgregarCamion">
+                        <label for="tipo_transporte">Tipo de Transporte</label>
+                        <input type="text" id="tipo_transporte" name="tipo_transporte" required>
+                        <label for="tipo_vehiculo">Tipo de Vehículo</label>
+                        <input type="text" id="tipo_vehiculo" name="tipo_vehiculo" required>
+                        <label for="placas">Placas</label>
+                        <input type="text" id="placas" name="placas_transporte" required>
+                        <label for="economico">Número Económico</label>
+                        <input type="text" id="economico" name="numero_economico" required>
+                        <label for="modelo">Modelo</label>
+                        <input type="number" id="modelo" name="modelo_vehiculo" required>
+                        <label for="configuracion">Configuración</label>
+                        <input type="text" id="configuracion" name="configuracion_vehicular" required>
+                        <label for="permiso_sct">Permiso SCT</label>
+                        <input type="text" id="permiso_sct" name="tipo_permiso_sct" required>
+                        <label for="num_permiso">Número de Permiso</label>
+                        <input type="text" id="num_permiso" name="numero_permiso_sct" required>
+                        <label for="aseguradora">Aseguradora</label>
+                        <input type="text" id="aseguradora" name="nombre_aseguradora" required>
+                        <label for="num_poliza">Número de Póliza</label>
+                        <input type="text" id="num_poliza" name="numero_poliza" required>
+                        <label for="rendimiento">Rendimiento</label>
+                        <input type="text" id="rendimiento" name="rendimiento" required>
+                        <label for="capacidad_carga">Capacidad de Carga</label>
+                        <input type="text" id="capacidad_carga" name="capacidad_carga" required>
+                        <button type="submit">Agregar</button>
+                        <button type="button" id="cerrarModal">Cerrar</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Ventana flotante para Actualizar Camión -->
+            <div id="modalActualizar" class="modal">
+                <div class="modal-content">
+                    <h3>Actualizar Camión</h3>
+                    <form id="formActualizarCamion">
+                        <input type="hidden" id="camion_id_upd" name="id">
+                        <label for="tipo_transporte_upd">Tipo de Transporte</label>
+                        <input type="text" id="tipo_transporte_upd" name="tipo_transporte" required>
+                        <label for="tipo_vehiculo_upd">Tipo de Vehículo</label>
+                        <input type="text" id="tipo_vehiculo_upd" name="tipo_vehiculo" required>
+                        <label for="placas_upd">Placas</label>
+                        <input type="text" id="placas_upd" name="placas_transporte" required>
+                        <label for="economico_upd">Número Económico</label>
+                        <input type="text" id="economico_upd" name="numero_economico" required>
+                        <label for="modelo_upd">Modelo</label>
+                        <input type="number" id="modelo_upd" name="modelo_vehiculo" required>
+                        <label for="configuracion_upd">Configuración</label>
+                        <input type="text" id="configuracion_upd" name="configuracion_vehicular" required>
+                        <label for="permiso_sct_upd">Permiso SCT</label>
+                        <input type="text" id="permiso_sct_upd" name="tipo_permiso_sct" required>
+                        <label for="num_permiso_upd">Número de Permiso</label>
+                        <input type="text" id="num_permiso_upd" name="numero_permiso_sct" required>
+                        <label for="aseguradora_upd">Aseguradora</label>
+                        <input type="text" id="aseguradora_upd" name="nombre_aseguradora" required>
+                        <label for="num_poliza_upd">Número de Póliza</label>
+                        <input type="text" id="num_poliza_upd" name="numero_poliza" required>
+                        <label for="rendimiento_upd">Rendimiento</label>
+                        <input type="text" id="rendimiento_upd" name="rendimiento" required>
+                        <label for="capacidad_carga_upd">Capacidad de Carga</label>
+                        <input type="text" id="capacidad_carga_upd" name="capacidad_carga" required>
+                        <button type="submit">Actualizar</button>
+                        <button type="button" id="cerrarModalUpd">Cerrar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

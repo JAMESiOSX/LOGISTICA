@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel del Cliente - Transportes GARZAM</title>
+    <link rel="stylesheet" href="panelcliente.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="../iconos/pestaña.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="../iconos/logo.png" alt="Logo de Transportes GARZAM" class="logo-img">
+            <div class="title-container">
+                <h1 class="logo">GARZAM</h1>
+                <p class="subtitle">Logística y Transporte</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#nuevo-contrato">Nuevo Contrato</a></li>
+                    <li><a href="#cotizaciones-confirmadas">Cotizaciones Confirmadas</a></li>
+                    <li><a href="#perfil">Perfil</a></li>
+                    <li><a href="../logout.php" id="logoutBtn"><i class="fas fa-sign-out-alt nav-icon"></i> Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="nuevo-contrato">
+        <h2>Nuevo Contrato</h2>
+        <form id="cotizacionForm">
+            <label for="rutas">Rutas Preestablecidas:</label>
+            <select id="rutas" required>
+            </select>
+
+            <label for="camiones">Seleccione el camión:</label>
+            <select id="camiones" required></select>
+
+            <label for="tipo_material">Seleccione el tipo de material:</label>
+            <select id="tipo_material" required></select>
+
+            <label for="peso">Ingrese el peso (en kilogramos):</label>
+            <input type="number" id="peso" required>
+
+            <label for="fechaSalida">Fecha de salida:</label>
+            <input type="datetime-local" id="fechaSalida" required>
+
+            <label for="fechaEntrega">Fecha de entrega:</label>
+            <input type="datetime-local" id="fechaEntrega" required>
+            
+            <button type="button" id="calcularCostoBtn">Calcular Costo</button>
+            <button type="button" onclick="location.href='../mapa/mapa.html'">NUEVA COTIZACIÓN POR MAPA</button>
+        </form>
+        <div id="costoTotal"></div>
+        <div id="accionesCotizacion" style="display: none;">
+            <button type="button" id="confirmarCotizacionBtn">Confirmar Cotización</button>
+            <button type="button" id="mantenerCotizacionBtn">Mantener Cotización</button>
+            <button type="button" id="rechazarCotizacionBtn">Rechazar Cotización</button>
+        </div>
+    </section>
+
+    <section id="cotizaciones-pendientes">
+        <h2>Cotizaciones Pendientes</h2>
+        <div id="listaCotizacionesPendientes"></div>
+    </section>
+
+    <section id="cotizaciones-confirmadas">
+        <h2>Cotizaciones Confirmadas</h2>
+        <table id="tablaCotizacionesConfirmadas">
+            <thead>
+                <tr>
+                    <th>Ruta</th>
+                    <th>Camión</th>
+                    <th>Peso (toneladas)</th>
+                    <th>Material</th>
+                    <th>Fecha de Salida</th>
+                    <th>Fecha de Entrega</th>
+                    <th>Precio Total</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se cargarán las cotizaciones confirmadas -->
+            </tbody>
+        </table>
+    </section>
+
+    <section id="perfil">
+        <h2>Perfil</h2>
+        <div id="perfil-info">
+            <!-- Aquí se cargarán los datos del perfil del usuario -->
+        </div>
+        <button id="updateProfileBtn">Actualizar Datos</button>
+    </section>
+
+    <!-- Modal para actualizar datos -->
+    <div id="updateModal" class="modal">
+        <div class="modal-content">
+            <span class="closeBtn">&times;</span>
+            <form id="updateProfileForm">
+                <h3>Actualizar Perfil</h3>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" required>
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo" required>
+                <label for="rfc">RFC:</label>
+                <input type="text" id="rfc" name="rfc" required>
+                <label for="curp">CURP:</label>
+                <input type="text" id="curp" name="curp" required>
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono" name="telefono" required>
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" required>
+                <label for="nombre_empresa">Nombre Empresa:</label>
+                <input type="text" id="nombre_empresa" name="nombre_empresa" required>
+                <label for="password">Nueva Contraseña (opcional):</label>
+                <input type="password" id="password" name="password">
+                <button type="submit">Actualizar</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Transportes GARZAM. Todos los derechos reservados.</p>
+        <div class="social-icons">
+            <a href="#"><img src="../iconos/tiktok.png" alt="TikTok"></a>
+            <a href="#"><img src="../iconos/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="../iconos/x.png" alt="X"></a>
+            <a href="#"><img src="../iconos/instagram.png" alt="Instagram"></a>
+        </div>
+    </footer>
+
+    <script src="panelcliente.js"></script>
+    <script src="cotizacionesConfirmadas.js"></script>
+    <script src="panelcliente_mapa.js"></script> <!-- Incluir el nuevo archivo JavaScript -->
+</body>
+</html>

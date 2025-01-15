@@ -1,0 +1,237 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* Evitar scroll horizontal */
+    margin: 0; /* Eliminar el margen por defecto */
+}
+
+header {
+    background-color: #000; /* Fondo negro */
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.header-content .logo-img {
+    height: 50px;
+    width: 100px;
+}
+
+.title-container {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+#nueva-cotizacion-mapa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    width: 90%;
+}
+
+#inputs-column {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    gap: 20px;
+}
+
+#inputs-column label {
+    flex: 1 1 200px;
+    margin: 10px 0 5px;
+}
+
+#inputs-column input,
+#inputs-column select,
+#inputs-column button {
+    flex: 1 1 200px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#inputs-column button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+#inputs-column button:hover {
+    background-color: #0056b3;
+}
+
+#calcularCostoBtn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#calcularCostoBtn:hover {
+    background-color: #0056b3;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    max-width: 600px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+#output,
+#costoTotal {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: left;
+    background-color: #f9f9f9;
+}
+
+.card button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.card button:hover {
+    background-color: #218838;
+}
+
+#selected-route-details {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+    background-color: #f9f9f9;
+}
+
+#selected-route-details img {
+    display: block;
+    margin: 10px auto;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    margin-top: auto;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.social-icons img {
+    height: 20px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.button-group button {
+    flex: 1;
+    margin: 0 5px;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.button-confirm {
+    background-color: #28a745; /* Verde */
+    color: white;
+}
+
+.button-confirm:hover {
+    background-color: #218838;
+}
+
+.button-maintain {
+    background-color: #ffc107; /* Amarillo */
+    color: black;
+}
+
+.button-maintain:hover {
+    background-color: #e0a800;
+}
+
+.button-cancel {
+    background-color: #dc3545; /* Rojo */
+    color: white;
+}
+
+.button-cancel:hover {
+    background-color: #c82333;
+}
+
+.notificacion-flotante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    font-size: 16px;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizaciones Confirmadas</title>
+    <link rel="stylesheet" href="cotizacionesConfirmadas.css">
+    <script src="cotizacionesConfirmadas.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1 class="logo">GARZAM</h1>
+        <nav>
+            <ul>
+                <li><a href="panelcliente.html">Panel del Cliente</a></li>
+                <li><a href="logout.php">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="cotizaciones-confirmadas">
+        <h2>Cotizaciones Confirmadas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ruta</th>
+                    <th>Camión</th>
+                    <th>Peso</th>
+                    <th>Material</th>
+                    <th>Precio Total</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="listaCotizacionesConfirmadas">
+                <!-- Las cotizaciones confirmadas se cargarán aquí -->
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Transportes GARZAM. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

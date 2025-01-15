@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Choferes</title>
+    <link rel="stylesheet" href="choferes.css">
+    <link rel="icon" href="../login/administrador.png" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- Material Icons -->
+    <script src="choferes.js" defer></script>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <div class="logo">
+            <h1>GARZAM</h1>
+            <p>Gestión de Choferes</p>
+        </div>
+        <ul>
+            <li><a href="../inicio/inicio.html">Inicio</a></li>
+            <li><a href="../camiones/camiones.html">Camiones</a></li>
+            <li><a href="choferes.html">Choferes</a></li>
+            <li><a href="../rutas/rutas.html">Rutas</a></li>
+            <li><a href="../clientes/clientes.html">Clientes</a></li>
+            <li><a href="../cotizaciones/cotizaciones.html">Cotizaciones rápidas</a></li>
+            <li><a href="../contratos/contratos.html">Contratos</a></li>
+            <li><a href="http://localhost/LOGISTICA%20Y%20COTIZACIONES/CLIENTES/index.html"><i class="material-icons">logout</i> Cerrar Sesión</a></li>
+        </ul>
+    </div>
+
+    <!-- Contenido principal -->
+    <main>
+        <section class="tabla-section">
+            <h2>Gestión de Choferes</h2>
+            <p>Buscar por nombre de chofer:</p>
+            <input type="text" id="nombre_chofer" placeholder="Nombre del chofer">
+            <button id="btnConsultar">Consultar</button>
+            <button id="btnAgregarNuevo">Agregar Nuevo Chofer</button>
+
+            <!-- Tabla para mostrar los resultados -->
+            <table id="tabla-choferes">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>RFC</th>
+                        <th>Nombre Completo</th>
+                        <th>Número de Licencia</th>
+                        <th>Número de Seguridad Social</th>
+                        <th>Número de Teléfono</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="choferesBody">
+                    <!-- Aquí se llenarán los datos -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Contenedor para los modales -->
+        <section class="modal-section">
+            <!-- Ventana flotante para Agregar Nuevo Chofer -->
+            <div id="modalAgregar" class="modal">
+                <div class="modal-content">
+                    <h3 class="modal-title">Agregar Nuevo Chofer</h3>
+                    <form id="formAgregarChofer">
+                        <div class="form-group">
+                            <label for="rfc">RFC</label>
+                            <input type="text" id="rfc" name="rfc" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nombre_completo">Nombre Completo</label>
+                            <input type="text" id="nombre_completo" name="nombre_completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="numero_licencia">Número de Licencia</label>
+                            <input type="text" id="numero_licencia" name="numero_licencia" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="numero_seguridad_social">Número de Seguridad Social</label>
+                            <input type="text" id="numero_seguridad_social" name="numero_seguridad_social" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="numero_telefono">Número de Teléfono</label>
+                            <input type="text" id="numero_telefono" name="numero_telefono" required>
+                        </div>
+                        <button type="submit">Agregar</button>
+                        <button type="button" id="cerrarModal">Cerrar</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Ventana flotante para Actualizar Chofer -->
+            <div id="modalActualizar" class="modal">
+                <div class="modal-content">
+                    <h3 class="modal-title">Actualizar Chofer</h3>
+                    <form id="formActualizarChofer">
+                        <input type="hidden" id="chofer_id_upd" name="id">
+                        <div class="form-group">
+                            <label for="rfc_upd">RFC</label>
+                            <input type="text" id="rfc_upd" name="rfc" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nombre_completo_upd">Nombre Completo</label>
+                            <input type="text" id="nombre_completo_upd" name="nombre_completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="numero_licencia_upd">Número de Licencia</label>
+                            <input type="text" id="numero_licencia_upd" name="numero_licencia" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="numero_seguridad_social_upd">Número de Seguridad Social</label>
+                            <input type="text" id="numero_seguridad_social_upd" name="numero_seguridad_social" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="numero_telefono_upd">Número de Teléfono</label>
+                            <input type="text" id="numero_telefono_upd" name="numero_telefono" required>
+                        </div>
+                        <button type="submit">Actualizar</button>
+                        <button type="button" id="cerrarModalUpd">Cerrar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

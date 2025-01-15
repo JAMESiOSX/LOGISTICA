@@ -1,0 +1,223 @@
+/* Estilo global */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    z-index: 1000;
+    border-bottom: 2px solid #555;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    max-width: 150px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.logo p {
+    margin: 0;
+    font-size: 14px;
+    font-style: italic;
+    color: #ccc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.navbar li {
+    margin: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #00d4ff;
+}
+
+main {
+    padding-top: 30px; /* Ajuste del espacio superior */
+}
+
+section {
+    padding: 20px 20px; /* Ajuste del padding */
+    margin-top: 20px; /* Ajuste del margen superior */
+    border-bottom: 1px bold #ddd;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+/* Estilo de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 12px; /* Letra más pequeña para la tabla */
+}
+
+th {
+    background-color: #000000;
+    color: white;
+}
+
+/* Mantener encabezados fijos y scroll en el cuerpo */
+table thead, table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+table tbody {
+    display: block;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* Estilo del formulario de búsqueda y botones */
+input[type="text"] {
+    padding: 8px;
+    width: 300px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #009bca;
+}
+
+/* Estilo para los modales */
+.modal {
+    display: none; /* Ocultar modales por defecto */
+    justify-content: center;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 450px;
+    max-height: 80%;
+    overflow-y: auto;
+    animation: modalMove 0.5s ease-in-out;
+}
+
+@keyframes modalMove {
+    0% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Estilos de los inputs y botones dentro del modal */
+.modal-content input[type="text"], 
+.modal-content input[type="number"], 
+.modal-content button {
+    margin: 10px 0;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.modal-content button[type="submit"], 
+.modal-content button[type="button"] {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-content button[type="submit"]:hover, 
+.modal-content button[type="button"]:hover {
+    background-color: #009bca;
+}
+
+/* Estilo responsivo para móviles */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+
+    main {
+        padding-top: 100px; /* Ajuste para navbar fijo en móviles */
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+}

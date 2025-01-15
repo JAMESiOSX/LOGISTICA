@@ -1,0 +1,81 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9; /* Fondo sin degradado */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333; /* Color de las letras por defecto */
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #333; /* Color de las letras en el contenedor de login */
+}
+
+.login-title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    font-family: 'Arial Black', Gadget, sans-serif; /* Fuente diferente para el título */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input {
+    width: 90%; /* Ajustar el tamaño de los campos */
+    max-width: 300px; /* Limitar el tamaño máximo de los campos */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333; /* Color de las letras en los campos */
+    font-family: 'Arial', sans-serif; /* Fuente diferente para los campos */
+    box-sizing: border-box; /* Asegurarse de que los campos no se desborden */
+}
+
+form button {
+    width: 90%; /* Ajustar el tamaño del botón */
+    max-width: 300px; /* Limitar el tamaño máximo del botón */
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Arial Black', Gadget, sans-serif; /* Fuente diferente para el botón */
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+.notification {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.notification.show {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.notification.error {
+    background-color: #FF4C4C;
+}

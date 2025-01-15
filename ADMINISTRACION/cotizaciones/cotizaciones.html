@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizaciones rápidas - GARZAM</title>
+    <link rel="stylesheet" href="cotizaciones.css">
+    <link rel="icon" href="../login/administrador.png" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- Material Icons -->
+    <script src="cotizaciones.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <h1>GARZAM</h1>
+            <p><i>Gestión de Cotizaciones</i></p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../inicio/inicio.html">Inicio</a></li>
+                <li><a href="../camiones/camiones.html">Camiones</a></li>
+                <li><a href="../choferes/choferes.html">Choferes</a></li>
+                <li><a href="../rutas/rutas.html">Rutas</a></li>
+                <li><a href="../clientes/clientes.html">Clientes</a></li>
+                <li><a href="cotizaciones.html">Cotizaciones rápidas</a></li>
+                <li><a href="../contratos/contratos.html">Contratos</a></li>
+                <li><a href="http://localhost/LOGISTICA%20Y%20COTIZACIONES/CLIENTES/index.html"><i class="material-icons">logout</i> Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="cotizaciones">
+            <h2>Cotizaciones rápidas</h2>
+            <p>Gestión de cotizaciones rápidas.</p>
+            <form id="searchForm">
+                <input type="text" id="search" placeholder="Buscar por nombre o apellido" required>
+                <button type="submit">Consultar</button>
+            </form>
+            <table id="cotizacionesTable">
+                <thead>
+                    <tr>
+                        <th>Nombre Completo</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
+                        <th>Origen</th>
+                        <th>Destino</th>
+                        <th>Peso</th>
+                        <th>Tipo de Mercancía</th>
+                        <th>Fecha de Salida</th>
+                        <th>Fecha de Entrega</th>
+                        <th>Costo</th>
+                        <th>Estatus</th>
+                        <th>Fecha de Creación</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se mostrarán las cotizaciones -->
+                </tbody>
+            </table>
+            <div class="notification" id="notification"></div>
+        </section>
+    </main>
+</body>
+</html>

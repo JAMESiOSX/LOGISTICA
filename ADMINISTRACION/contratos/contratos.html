@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contratos - GARZAM</title>
+    <link rel="stylesheet" href="contratos.css">
+    <link rel="icon" href="../login/administrador.png" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <!-- Material Icons -->
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <h1>GARZAM</h1>
+            <p><i>Gestión de Contratos</i></p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../inicio/inicio.html">Inicio</a></li>
+                <li><a href="../camiones/camiones.html">Camiones</a></li>
+                <li><a href="../choferes/choferes.html">Choferes</a></li>
+                <li><a href="../rutas/rutas.html">Rutas</a></li>
+                <li><a href="../clientes/clientes.html">Clientes</a></li>
+                <li><a href="../cotizaciones/cotizaciones.html">Cotizaciones rápidas</a></li>
+                <li><a href="contratos.html">Contratos</a></li>
+                <li><a href="http://localhost/LOGISTICA%20Y%20COTIZACIONES/CLIENTES/index.html"><i class="material-icons">logout</i> Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="contratos">
+            <h2>Contratos</h2>
+            <p>Gestión de contratos.</p>
+            <input type="text" id="buscarNombre" placeholder="Buscar por Nombre o Apellidos">
+            <button id="buscarBtn">Buscar</button>
+            <table id="tablaContratos">
+                <thead>
+                    <tr>
+                        <th>N. de Contrato</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Ruta</th>
+                        <th>Fecha de Creación</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se cargarán los contratos -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="contratos.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 10px;
+}
+
+.header {
+    text-align: center;
+}
+
+.header img {
+    width: 100px;
+}
+
+.header h1 {
+    margin: 10px 0;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.content p {
+    line-height: 1.6;
+}
+
+.content p strong {
+    font-size: 1.1em;
+}
+
+.footer {
+    margin-top: 40px;
+    text-align: center;
+}
